@@ -1,29 +1,20 @@
 <!DOCTYPE html>
 <html ng-app="githubViewer">
-<head>
-  <script data-require="angular.js@*" data-semver="1.2.25" src="https://code.angularjs.org/1.2.25/angular.js"></script>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
-</head>
 
-<body ng-controller="MainController">
-  <h1>{{message}}</h1>
+  <head>
+    <script data-require="angular.js@*" data-semver="1.3.0-beta.5" src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
+    <script data-require="angular-route@*" data-semver="1.2.14" src="https://code.angularjs.org/1.2.14/angular-route.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="app.js"></script>
+    <script src="js/MainController.js"></script>
+    <script src="js/UserController.js"></script>
+    <script src="js/RepoController.js"></script>
+    <script src="js/github.js"></script>
+  </head>
 
-  <div>
-    {{error}}
-  </div>
+  <body>
+    <h1>GithubViewer</h1>
+    <div ng-view></div>
+  </body>
 
-  <div ng-show="countdown">
-  You have {{ countdown }} seconds to search...
-  </div>
-
-  <form name="searchUser" ng-submit="search(username)">
-    <input type="search" required placeholder="Username to find..." ng-model="username" />
-    <input type="submit" value="Search">
-  </form>
-  
-  <div ng-include="'userdetails.html'" ng-show="user">
-  </div>
-
-</body>
 </html>
