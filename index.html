@@ -13,7 +13,10 @@
     {{error}}
   </div>
 
-  {{ countdown }}
+  <div ng-show="countdown">
+  You have {{ countdown }} seconds to search...
+  </div>
+
   <form name="searchUser" ng-submit="search(username)">
     <input type="search" required placeholder="Username to find..." ng-model="username" />
     <input type="submit" value="Search">
